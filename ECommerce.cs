@@ -21,7 +21,7 @@ namespace ECommerce
 		//prints something
 		public void Login()
 		{
-			Console.WriteLine($"Hi, {this.FirstName} you are now logged in");
+			Console.WriteLine($"Hi, {this.FirstName} {this.LastName} you are now logged in");
 		}
 		public void AddToCart()
 		{
