@@ -4,13 +4,11 @@ namespace CSharpExercises
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            string name;
-            Console.Write("Enter your name: ");
-            name = Console.ReadLine();
-            string upperCase = name.ToUpper(); 
-            Console.WriteLine(upperCase); 
+            Console.WriteLine("Enter your name: ");
+            string myName = Console.ReadLine();
+            Console.WriteLine($"Your name is {myName.ToUpper()}"); 
         }
     }
 }
