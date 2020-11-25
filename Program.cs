@@ -6,7 +6,9 @@ namespace CSharpExercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string name = Console.WriteLine("Vanessa");
+            string upperCase = name.Read().ToUpper(); 
+            Console.WriteLine(upperCase); 
         }
     }
 }
