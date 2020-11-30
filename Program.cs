@@ -7,6 +7,12 @@ namespace CSharpExercises
     {
         static void Main(string[] args)
         {
+
+            Article article = new Article("Face mask", 12.44, 2);
+            article.List();
+            article.Retrieve();
+            article.Destroy();
+
             /*
            Console.WriteLine("Enter your name"); 
            string myName = Console.ReadLine();
@@ -33,10 +39,6 @@ namespace CSharpExercises
             Customer myCustomer = new Customer("Beatrice", "Sarti", "bea@gmail.com");
             Console.WriteLine(myCustomer.Login());
             */
-            Article article = new Article("Face mask", 12.44, 2);
-  
-            article.Retrieve();
-            article.Destroy();
         }
     }
 }

@@ -60,9 +60,9 @@ namespace ECommerce
 			this.Id = id;
 		}
 
-		public void Crud()
+		public void List()
 		{
-			Console.WriteLine($"The id of this article is {this.Id}");
+			Console.WriteLine($"The articole you just insereted is {this.NameArticle}, the price is {this.Price} euro.");
 		}
 
 		/*public List()
