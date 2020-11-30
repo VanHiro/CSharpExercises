@@ -44,4 +44,40 @@ namespace ECommerce
 			Console.WriteLine("To sign up enter your information here");
 		}
 	}
+	class Article
+	{
+		private int Id;
+		private string NameArticle;
+		private double Price;
+		private int Stock;
+
+
+		//Initialize Article Class
+		public Article(string nameArticle, double price, int id)
+		{
+			this.NameArticle = nameArticle;
+			this.Price = price;
+			this.Id = id;
+		}
+
+		public void Crud()
+		{
+			Console.WriteLine($"The id of this article is {this.Id}");
+		}
+
+		/*public List()
+		{
+			//
+		}
+		*/
+		public void Retrieve()
+		{
+			Console.WriteLine($"The id of this article is: {this.Id}");
+		}
+
+		public void Destroy()
+		{
+			Console.WriteLine($"The article with id {this.Id} has been deleted");
+		}
+	}
 }
