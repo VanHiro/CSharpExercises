@@ -46,30 +46,43 @@ namespace ECommerce
 	}
 	class Article
 	{
-		private int Id;
-		private string NameArticle;
-		private double Price;
-		private int Stock;
+		public int Id { get; }
+		public string NameArticle { get; set; }
+		public string Description { get; set; }
+		public double Price { get; set; }
+		//DO I NEED THE SET TO BE ABLE TO EDIT THE STOCK? OR IS IT AUTOMATIC?
+		public int Stock 
+		{ 
+			get
+			{
+				return 20;
+			}		
+				
+		}
+		public int TaxRate { get; }
 
-
-		//Initialize Article Class
+		// Questo public Article serve ad Inizializzare i campi
+		// della classe quando creiamo un nuovo oggetto.
+		//Stabilisce cosa questa nuova istanza deve contenere
 		public Article(string nameArticle, double price, int id)
 		{
+			//This can be written also withouth the THIS
+			//NameArticle = nameArticle;
 			this.NameArticle = nameArticle;
 			this.Price = price;
 			this.Id = id;
 		}
+
+		/*public void UpdateStock ()
+		{
+			this.Stock = stock + 20;
+		}*/
 
 		public void List()
 		{
 			Console.WriteLine($"The articole you just insereted is {this.NameArticle}, the price is {this.Price} euro.");
 		}
 
-		/*public List()
-		{
-			//
-		}
-		*/
 		public void Retrieve()
 		{
 			Console.WriteLine($"The id of this article is: {this.Id}");

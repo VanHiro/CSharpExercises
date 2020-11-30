@@ -9,10 +9,16 @@ namespace CSharpExercises
         {
 
             Article article = new Article("Face mask", 12.44, 2);
+
+            Console.WriteLine($"The actual stock is up to: {article.Stock + 20}");
+            //article.NameArticle = "changed";
+            
             article.List();
             article.Retrieve();
             article.Destroy();
 
+            
+           //Console.WriteLine(article.NameArticle);
             /*
            Console.WriteLine("Enter your name"); 
            string myName = Console.ReadLine();
