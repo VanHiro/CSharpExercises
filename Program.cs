@@ -11,7 +11,7 @@ namespace CSharpExercises
             Customer customer = new Customer("Chiara", "Bianchi", 17);
             Customer customer2 = new Customer("Chiara", "Bianchi", 27);
 
-            Article spumante = new Article("spumante", 32, true);
+            Article spumante = new Article("spumante", 32, "adults");
 
 
             customer.CheckAge();
@@ -19,6 +19,10 @@ namespace CSharpExercises
 
             spumante.AddToCart(customer);
             spumante.AddToCart(customer2);
+
+
+            //OrderHeader order = new OrderHeader(4545, );
+
 
 
             //Article article = new Article("Face mask", 12.44, 2);

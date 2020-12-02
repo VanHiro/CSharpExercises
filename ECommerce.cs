@@ -34,7 +34,7 @@ namespace ECommerce
 		{
 			if (Age < 18)
 			{
-				Console.WriteLine("You may not be able to purchase certain items");
+				Console.WriteLine("You may not be able to purchase certain items.");
 			}
 			else
 			{
@@ -66,7 +66,7 @@ namespace ECommerce
 			public string NameArticle { get; set; }
 			public string Description { get; set; }
 			public double Price { get; set; }
-			private bool Alcool;
+			private string Alcool;
 
 			public int Stock
 			{
@@ -81,7 +81,7 @@ namespace ECommerce
 			// Questo public Article serve ad Inizializzare i campi
 			// della classe quando creiamo un nuovo oggetto.
 			//Stabilisce cosa questa nuova istanza deve contenere
-			public Article(string nameArticle, double price, bool alcool)
+			public Article(string nameArticle, double price, string alcool)
 			{
 				//This can be written also withouth the THIS
 				//NameArticle = nameArticle;
@@ -97,7 +97,7 @@ namespace ECommerce
 
 			public bool IsOver(Customer customer)
 			{
-				if(this.Alcool && customer.Age <18)
+				if(this.Alcool == "adults" && customer.Age <18)
 			{
 				return false;
 			}
@@ -129,5 +129,33 @@ namespace ECommerce
 			{
 				Console.WriteLine($"The article with id {this.Id} has been deleted");
 			}
+		}
+	class OrderHeader
+	{
+		private int Id;
+		private DateTime Date;
+		private int OrderNumber;
+		private int IdCustomer;
+
+		public OrderHeader (int orderNumber, DateTime date)
+		{
+			this.OrderNumber = orderNumber;
+			this.Date = date;
+		}
+
+		public void Create()
+		{
+			Console.WriteLine($"The order number {this.OrderNumber} has been placed in date {this.Date}. To find the order look for the ID {this.Id}");
+		}
+
+		public void Cancel()
+		{
+			Console.WriteLine($"The order number {this.OrderNumber} has been successfully canceled");
+		} 
+
+		public void List()
+		{
+			Console.WriteLine("Here you can find the order's history");
+		}
 	}
 }
