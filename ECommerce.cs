@@ -135,10 +135,10 @@ namespace ECommerce
 		private int OrderNumber;
 		private int IdCustomer;
 
-		public OrderHeader (int orderNumber, DateTime date)
+		public OrderHeader (int orderNumber, int idCustomer)
 		{
 			this.OrderNumber = orderNumber;
-			this.Date = date;
+			this.IdCustomer = idCustomer;
 		}
 
 		public void Create()

@@ -21,7 +21,11 @@ namespace CSharpExercises
             spumante.AddToCart(customer2);
 
 
-            //OrderHeader order = new OrderHeader(4545, );
+            OrderHeader order = new OrderHeader(4545, 12);
+
+            order.Cancel();
+            order.Create();
+            order.List();
 
 
 
