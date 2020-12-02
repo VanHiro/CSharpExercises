@@ -8,17 +8,30 @@ namespace CSharpExercises
         static void Main(string[] args)
         {
 
-            Article article = new Article("Face mask", 12.44, 2);
+            Customer customer = new Customer("Chiara", "Bianchi", 17);
+            Customer customer2 = new Customer("Chiara", "Bianchi", 27);
 
-            Console.WriteLine($"The actual stock is up to: {article.Stock + 20}");
+            Article spumante = new Article("spumante", 32, true);
+
+
+            customer.CheckAge();
+            customer2.CheckAge();
+
+            spumante.AddToCart(customer);
+            spumante.AddToCart(customer2);
+
+
+            //Article article = new Article("Face mask", 12.44, 2);
+
+            //Console.WriteLine($"The actual stock is up to: {article.Stock + 20}");
             //article.NameArticle = "changed";
-            
+            /*
             article.List();
             article.Retrieve();
             article.Destroy();
+            */
 
-            
-           //Console.WriteLine(article.NameArticle);
+            //Console.WriteLine(article.NameArticle);
             /*
            Console.WriteLine("Enter your name"); 
            string myName = Console.ReadLine();
