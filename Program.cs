@@ -11,7 +11,7 @@ namespace CSharpExercises
             Customer customer = new Customer("Chiara", "Bianchi", 17);
             Customer customer2 = new Customer("Chiara", "Bianchi", 27);
 
-            Article spumante = new Article("spumante", 32, "adults");
+            Article spumante = new Article("spumante", 32, "alcool");
 
 
             customer.CheckAge();

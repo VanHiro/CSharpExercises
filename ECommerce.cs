@@ -12,6 +12,7 @@ namespace ECommerce
 		protected string City;
 		protected string Email;
 		protected string Password;
+
 		public int Age { get; set; }
 
 		public Customer(string firstName, string lastName, int age) 
@@ -25,10 +26,7 @@ namespace ECommerce
 		{
 			Console.WriteLine($"Hi, {this.FirstName} {this.LastName} you are now logged in");
 		}
-		public void AddToCart()
-		{
-			Console.WriteLine("Congratulations, the order was placed");
-		}
+
 		//This one checks that the age is correct. Below i do it with the order
 		public void CheckAge()
 		{
@@ -66,7 +64,7 @@ namespace ECommerce
 			public string NameArticle { get; set; }
 			public string Description { get; set; }
 			public double Price { get; set; }
-			private string Alcool;
+			private string Beverage;
 
 			public int Stock
 			{
@@ -81,13 +79,13 @@ namespace ECommerce
 			// Questo public Article serve ad Inizializzare i campi
 			// della classe quando creiamo un nuovo oggetto.
 			//Stabilisce cosa questa nuova istanza deve contenere
-			public Article(string nameArticle, double price, string alcool)
+			public Article(string nameArticle, double price, string beverage)
 			{
 				//This can be written also withouth the THIS
 				//NameArticle = nameArticle;
 				this.NameArticle = nameArticle;
 				this.Price = price;
-				this.Alcool = alcool;
+				this.Beverage = beverage;
 			}
 
 			/*public void UpdateStock ()
@@ -97,7 +95,7 @@ namespace ECommerce
 
 			public bool IsOver(Customer customer)
 			{
-				if(this.Alcool == "adults" && customer.Age <18)
+				if(this.Beverage == "alcool" && customer.Age <18)
 			{
 				return false;
 			}
