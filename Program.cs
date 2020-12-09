@@ -5,9 +5,19 @@ namespace CSharpExercises
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var list = new Customers();
 
+            var marco = new Customer("Marco", "Bellucci", 23);
+            var stella = new Customer("Stella", "Marchi", 34);
+
+            list.Add(marco);
+            list.Add(stella);
+
+
+
+            /*
             Customer customer = new Customer("Chiara", "Bianchi", 17);
             Customer customer2 = new Customer("Chiara", "Bianchi", 27);
 
@@ -26,7 +36,7 @@ namespace CSharpExercises
             order.Cancel();
             order.Create();
             order.List();
-
+            */
 
 
             //Article article = new Article("Face mask", 12.44, 2);
