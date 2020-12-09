@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 
 namespace ECommerce
 {
-	class Customer {
+	class Customer
+	{
 		//proprietà
 		protected int Id;
 		protected string FirstName;
@@ -15,12 +17,13 @@ namespace ECommerce
 
 		public int Age { get; set; }
 
-		public Customer(string firstName, string lastName, int age) 
+		public Customer(string firstName, string lastName, int age)
 		{
 			this.FirstName = firstName;
 			this.LastName = lastName;
 			this.Age = age;
 		}
+
 		//prints something
 		public void Login()
 		{
@@ -39,8 +42,8 @@ namespace ECommerce
 				Console.WriteLine("");
 			}
 		}
-				
-			
+
+
 		public void MyOrders()
 		{
 			Console.WriteLine("Your previous orders are:");
@@ -58,51 +61,57 @@ namespace ECommerce
 			Console.WriteLine("To sign up enter your information here");
 		}
 	}
-		class Article
+	public class Customers
+	{
+		private List<Customer> listedCustomers = new List<Customer>();
+	}
+
+
+	class Article
+	{
+		public int Id { get; }
+		public string NameArticle { get; set; }
+		public string Description { get; set; }
+		public double Price { get; set; }
+		private string Beverage;
+
+		public int Stock
 		{
-			public int Id { get; }
-			public string NameArticle { get; set; }
-			public string Description { get; set; }
-			public double Price { get; set; }
-			private string Beverage;
-
-			public int Stock
+			get
 			{
-				get
-				{
-					return 20;
-				}
-
-			}
-			public int TaxRate { get; }
-
-			// Questo public Article serve ad Inizializzare i campi
-			// della classe quando creiamo un nuovo oggetto.
-			//Stabilisce cosa questa nuova istanza deve contenere
-			public Article(string nameArticle, double price, string beverage)
-			{
-				//This can be written also withouth the THIS
-				//NameArticle = nameArticle;
-				this.NameArticle = nameArticle;
-				this.Price = price;
-				this.Beverage = beverage;
+				return 20;
 			}
 
-			/*public void UpdateStock ()
-			{
-				this.Stock = stock + 20;
-			}*/
+		}
+		public int TaxRate { get; }
 
-			public bool IsOver(Customer customer)
-			{
-				if(this.Beverage == "alcool" && customer.Age <18)
+		// Questo public Article serve ad Inizializzare i campi
+		// della classe quando creiamo un nuovo oggetto.
+		//Stabilisce cosa questa nuova istanza deve contenere
+		public Article(string nameArticle, double price, string beverage)
+		{
+			//This can be written also withouth the THIS
+			//NameArticle = nameArticle;
+			this.NameArticle = nameArticle;
+			this.Price = price;
+			this.Beverage = beverage;
+		}
+
+		/*public void UpdateStock ()
+		{
+			this.Stock = stock + 20;
+		}*/
+
+		public bool IsOver(Customer customer)
+		{
+			if (this.Beverage == "alcool" && customer.Age < 18)
 			{
 				return false;
 			}
 
 			return true;
-			}
-			public void AddToCart(Customer customer)
+		}
+		public void AddToCart(Customer customer)
 		{
 			if (this.IsOver(customer))
 			{
@@ -114,20 +123,20 @@ namespace ECommerce
 			}
 		}
 		public void List()
-			{
-				Console.WriteLine($"The articole you just insereted is {this.NameArticle}, the price is {this.Price} euro.");
-			}
-
-			public void Retrieve()
-			{
-				Console.WriteLine($"The id of this article is: {this.Id}");
-			}
-
-			public void Destroy()
-			{
-				Console.WriteLine($"The article with id {this.Id} has been deleted");
-			}
+		{
+			Console.WriteLine($"The articole you just insereted is {this.NameArticle}, the price is {this.Price} euro.");
 		}
+
+		public void Retrieve()
+		{
+			Console.WriteLine($"The id of this article is: {this.Id}");
+		}
+
+		public void Destroy()
+		{
+			Console.WriteLine($"The article with id {this.Id} has been deleted");
+		}
+	}
 	class OrderHeader
 	{
 		private int Id;
@@ -135,7 +144,7 @@ namespace ECommerce
 		private int OrderNumber;
 		private int IdCustomer;
 
-		public OrderHeader (int orderNumber, int idCustomer)
+		public OrderHeader(int orderNumber, int idCustomer)
 		{
 			this.OrderNumber = orderNumber;
 			this.IdCustomer = idCustomer;
@@ -149,7 +158,7 @@ namespace ECommerce
 		public void Cancel()
 		{
 			Console.WriteLine($"The order number {this.OrderNumber} has been successfully canceled");
-		} 
+		}
 
 		public void List()
 		{
