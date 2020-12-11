@@ -1,5 +1,6 @@
 ﻿using System;
 using ECommerce;
+using EXLinq;
 
 namespace CSharpExercises
 {
@@ -7,6 +8,8 @@ namespace CSharpExercises
     {
         public static void Main(string[] args)
         {
+            ExLinq.Filterting();
+            /*
             var list = new Customers();
 
             var marco = new Customer("Marco", "Bellucci", 23);
@@ -14,7 +17,7 @@ namespace CSharpExercises
 
             list.Add(marco);
             list.Add(stella);
-
+            */
 
 
             /*

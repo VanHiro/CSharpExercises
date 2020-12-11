@@ -200,10 +200,6 @@ namespace ECommerce
 					Console.Write($"Id: {article.Id}, Name Article: {article.NameArticle}, Description{article.Description}, Price: {article.Price}, Type of beverage: {article.Beverage}");
 				}
 			}
-			/*public void Add(Article article)
-			{
-				this._articlesList.Add(article);
-			}*/
 			public void Update(Article article)
 			{
 				Update(article);
