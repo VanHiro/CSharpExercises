@@ -13,21 +13,30 @@ using System.Collections.Generic;
  select
 */
 
-namespace EXLinq
+namespace Examples
 {
-	class ExLinq {
+	class Examples {
 		// static, method that can be called without the NEW
 		public static IEnumerable<string> Filterting()
 		{
 			var cities = new List<string> { "Arezzo", "Arezzo", "Siena", "Firenze", "Lucca" };
 			var queryCities =
 				from city in cities
-				where city == "Arezzo"
+				where city.Length <= 5
 				let cityToUpperCase = city.ToUpper()
 				select cityToUpperCase;
 			return queryCities;
-			
-			//THE QUERY ENDs
+
+			/*
+				var cities = new List<string> { "Arezzo", "Arezzo", "Siena", "Firenze", "Lucca" };
+				var queryCities =
+					from city in cities
+					where city.Length <= 5 
+					let cityToUpperCase = city.ToUpper()
+					select cityToUpperCase;
+				return queryCities;
+				//THE QUERY ENDs
+			*/
 
 			/*
 				var cities = new string[] { "Rome", "Milan", "Florence" };

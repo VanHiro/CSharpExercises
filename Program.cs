@@ -1,6 +1,7 @@
 ﻿using System;
 using ECommerce;
-using EXLinq;
+using ExLinq;
+using Examples;
 
 namespace CSharpExercises
 {
@@ -8,7 +9,16 @@ namespace CSharpExercises
     {
         public static void Main(string[] args)
         {
-            ExLinq.Filterting();
+            var city = FilteringUtils.Search("Arezzo");
+            
+            //let firstChar = --- (usato per congelare quel dato e usarlo piu' avanti (utile per l'esercizio))
+
+            /*
+             * EXAMPLE*
+            string city = FilteringUtils.Search("Siena");
+            Console.WriteLine(city);
+            */
+
             /*
             var list = new Customers();
 
