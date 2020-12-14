@@ -2,6 +2,7 @@
 using ECommerce;
 using ExLinq;
 using Examples;
+using CSharpExercises;
 
 namespace CSharpExercises
 {
@@ -9,8 +10,10 @@ namespace CSharpExercises
     {
         public static void Main(string[] args)
         {
-            var city = FilteringUtils.Search("Arezzo");
-            
+            var peaksList = Mountains.ParseNames("Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano");
+
+            //var city = FilteringUtils.Search("Arezzo");
+           
             //let firstChar = --- (usato per congelare quel dato e usarlo piu' avanti (utile per l'esercizio))
 
             /*

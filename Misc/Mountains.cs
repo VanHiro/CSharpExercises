@@ -11,11 +11,18 @@ namespace CSharpExercises
 		public static IEnumerable<string> ParseNames(string mountainsStr)
 		{
 			var mountains = new List<string>(mountainsStr.Split(';'));
-			var foo =
-				from row in mountains
-				let name = row.Trim().Split(',')[0]
-				select name;
-			return foo;
+			var query =
+				from peaksList in mountains
+				let parsedName = peaksList.Trim().Split(',')[0]
+				select parsedName;
+			
+			foreach (var parsedName in query)
+			{
+				Console.WriteLine(parsedName);
+			}
+
+			return query;
+
 
 			/* Alternate Solution
 			// first separate string where the semicolon is 
