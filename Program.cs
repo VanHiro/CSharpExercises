@@ -1,7 +1,8 @@
 ﻿using System;
-using ECommerce;
+using System.Collections.Generic;
 using ExLinq;
 using Examples;
+using ECommerce;
 using CSharpExercises;
 
 namespace CSharpExercises
@@ -10,10 +11,34 @@ namespace CSharpExercises
     {
         public static void Main(string[] args)
         {
-            var peaksList = Mountains.ParseNames("Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano");
+            //Milestone 1
+            //we can create new customers
+            Customer mattia = new Customer("Mattia", "Basagli", 27);
+            Customer maria = new Customer("Maria", "Tenti", 45);
+            //we can create new articles
+            Article mirtillo = new Article("Succo al Mirtillo", "Best drunk fresh", 2.50, "succo");
+            Article aranciata = new Article("Aranciata", "Best drunk fresh", 3.00, "bevanda");
+            Article limonata = new Article("Limonata", "Best served hot", 4.00, "bevanda");
+            //we can add each article to Articles
+            Articles beverages = new Articles();
+
+            beverages.Add(mirtillo);
+            beverages.Add(aranciata);
+            beverages.Add(limonata);
+
+            //we can list all the articles 
+            beverages.List();
+
+            //Milestone 2
+            //we can search for an article by its description, and we can print its price
+            //SEARCH DRAFT
+            beverages.SearchDescr("fresh");
+           
+
+            //var peaksList = Mountains.ParseNames("Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano");
 
             //var city = FilteringUtils.Search("Arezzo");
-           
+
             //let firstChar = --- (usato per congelare quel dato e usarlo piu' avanti (utile per l'esercizio))
 
             /*
