@@ -8,18 +8,34 @@ namespace ECommerce
 	class Cart
 	{
 		private int _id;
-		private int _idArticle;
 		private int _idUser;
-		private int _nItems;
-
-		public int Id { get => _id; }
-		public int IdArticle { get => _idArticle; }
-		public int IdUser { get => _idUser; }
-		public int NItems { get => _nItems; set => _nItems = value; }
-
-		public void List()
+		protected List<SingleArticle> _shoppingList;
+		public List<SingleArticle> ShoppingList
 		{
-			Console.WriteLine("Here are the items in your cart:");
+			get => _shoppingList;
+		}
+		public int Id { get => _id; }
+		public int IdUser { get => _idUser; }
+		public Cart(Customer customer)
+		{
+			this._shoppingList = new List<SingleArticle>();
+			this._idUser = customer.Id;
+		}
+		public void AddToCart(SingleArticle article)
+		{
+			_shoppingList.Add(article);
+		}
+		public void ListCart()
+		{
+			foreach (SingleArticle article in this._shoppingList)
+			{
+				Console.Write($"Name Article: {article.NameArticle}, \nDescription: {article.Description}, \nPrice: {article.Price} ENDCART\n\n");
+			}
+		}
+		public void TotalPrice()
+		{
+				double total = _shoppingList.Aggregate(0.00, (acc, val) => acc + val.Price);
+				Console.WriteLine($"The total value of your cart is: {total} ENDTOTALPRICE\n\n");
 		}
 		public void Delete()
 		{

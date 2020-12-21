@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using ExLinq;
 using Examples;
@@ -16,25 +17,51 @@ namespace CSharpExercises
             Customer mattia = new Customer("Mattia", "Basagli", 27);
             Customer maria = new Customer("Maria", "Tenti", 45);
             //we can create new articles
-            Article mirtillo = new Article("Succo al Mirtillo", "Best drunk fresh", 2.50, "succo");
-            Article aranciata = new Article("Aranciata", "Best drunk fresh", 3.00, "bevanda");
-            Article limonata = new Article("Limonata", "Best served hot", 4.00, "bevanda");
-            //we can add each article to Articles
+            SingleArticle mirtillo = new SingleArticle("Succo al Mirtillo", "Best drunk fresh", 2.50, "succo");
+            SingleArticle aranciata = new SingleArticle("Aranciata", "Best drunk fresh", 3.00, "bevanda");
+            SingleArticle limonata = new SingleArticle("Limonata", "Best served hot", 4.00, "bevanda");
+            //we can create a list of articles
             Articles beverages = new Articles();
-
+            //we can add items to the list
             beverages.Add(mirtillo);
             beverages.Add(aranciata);
             beverages.Add(limonata);
-
-            //we can list all the articles 
+            //we can list all the articles
             beverages.List();
 
             //Milestone 2
             //we can search for an article by its description, and we can print its price
-            //SEARCH DRAFT
-            beverages.SearchDescr("fresh");
-           
+            beverages.SearchDescr("hot");
 
+            //Milestone 3
+            //we can create a cart and assign it to a user
+            Cart cartMaria = new Cart(maria);
+            SingleArticle fragolino = new SingleArticle("Fragolino", "Best served icy", 4.00, "bevanda");
+            SingleArticle cedrata = new SingleArticle("Cedrata", "Best served cold", 2.00, "bevanda");
+
+            //we can add each article to the cart
+            cartMaria.AddToCart(fragolino);
+            cartMaria.AddToCart(cedrata);
+            //we can show what's in the cart
+            cartMaria.ListCart();
+
+            //we can add a searched article to the cart NOT WORKING
+            cartMaria.AddToCart(beverages.SearchDescr("fresh"));
+
+            //we can provide the user with a total price of all the articles in the cart
+            cartMaria.TotalPrice();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+            //TESTING PREVIOUS EXERCISES 
             //var peaksList = Mountains.ParseNames("Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano");
 
             //var city = FilteringUtils.Search("Arezzo");
@@ -92,12 +119,12 @@ namespace CSharpExercises
 
             //Console.WriteLine(article.NameArticle);
             /*
-           Console.WriteLine("Enter your name"); 
-           string myName = Console.ReadLine();
-           string upperCased = myName.ToUpper();    
-     
-           Console.WriteLine($"Your name in capital letters is {upperCased}");
-           */
+            Console.WriteLine("Enter your name"); 
+            string myName = Console.ReadLine();
+            string upperCased = myName.ToUpper();    
+
+            Console.WriteLine($"Your name in capital letters is {upperCased}");
+            */
 
             /*
             if(args.Length > 0 ){  
@@ -117,6 +144,3 @@ namespace CSharpExercises
             Customer myCustomer = new Customer("Beatrice", "Sarti", "bea@gmail.com");
             Console.WriteLine(myCustomer.Login());
             */
-        }
-    }
-}
