@@ -17,15 +17,19 @@ namespace ECommerce
 		{
 			_articlesList = new List<SingleArticle>();
 		}
-		public void SearchDescr(string searchFor)
+		public SingleArticle SearchByDescr(string target)
 		{
-			foreach (SingleArticle article in _articlesList)
-			{
-				if (article.Description.Contains(searchFor) == true)
+			//foreach (SingleArticle article in _articlesList)
+			//{
+				//article.Description.Find sarebbe stato meglio
+				//if (article.Description.Contains(target))
+				if(_articlesList.Find(article => article.Description.Contains(target )))
 				{
 					Console.WriteLine($"{article} ENDSEARCH\n\n");
+					return article;
 				}
-			}
+			//}
+			//return "null";
 		}
 		public void Add(SingleArticle article)
 		{

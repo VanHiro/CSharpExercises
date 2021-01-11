@@ -7,25 +7,24 @@ namespace ECommerce
 {
 	class Cart
 	{
-		private int _id;
+		private int _idCart;
 		private int _idUser;
 		protected List<SingleArticle> _shoppingList;
 		public List<SingleArticle> ShoppingList
 		{
 			get => _shoppingList;
 		}
-		public int Id { get => _id; }
-		public int IdUser { get => _idUser; }
+		public Customer Id { get; }
+		public int IdCart { get => _idCart; }
 		public Cart(Customer customer)
 		{
 			this._shoppingList = new List<SingleArticle>();
-			this._idUser = customer.Id;
 		}
-		public void AddToCart(SingleArticle article)
+		public void Add(SingleArticle article)
 		{
 			_shoppingList.Add(article);
 		}
-		public void ListCart()
+		public void List()
 		{
 			foreach (SingleArticle article in this._shoppingList)
 			{
