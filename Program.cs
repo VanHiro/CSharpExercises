@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Text;
+using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using ExLinq;
@@ -12,7 +14,23 @@ namespace CSharpExercises
     {
         public static void Main(string[] args)
         {
-            User pino = new User
+            User pino = new User("Pino", 22);
+            User bianca = new User("Bianca", 17);
+            User camilla = new User("Camilla", 15);
+            User irina = new User("Irina", 16);
+
+            pino.Show();
+            bianca.Show();
+
+            UsersList underaged = new UsersList();
+            underaged.Add(bianca);
+            underaged.Add(camilla);
+            underaged.Add(irina);
+            underaged.List();
+
+            UsersList filtered = underaged.Filtering('c');
+
+            filtered.WriteToFile();
         }
     }
 }
