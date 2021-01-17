@@ -37,12 +37,7 @@ namespace CSharpExercises
             UsersList result = new UsersList();
             foreach(User user in this.Users)
             {
-                string lower = user.Name.ToLower();
-                string upper = user.Name.ToUpper();
-                if (lower.Contains(target))
-                {
-                    result.Add(user);
-                } else if (upper.Contains(target))
+                if (user.Name.Contains(target, StringComparison.OrdinalIgnoreCase))
                 {
                     result.Add(user);
                 }
